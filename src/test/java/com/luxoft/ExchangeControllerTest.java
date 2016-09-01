@@ -6,8 +6,15 @@ public class ExchangeControllerTest {
     private ExchangeController exchangeController = new ExchangeController();
 
     @Test
-    public void testMessage(){
-        Assert.assertEquals("not equal","heLLo Name",exchangeController.hello("Name"));
+    public void usdCurrency() {
+        // given
+        String currency = "usd";
+
+        // when
+        String result = exchangeController.exchangeRate(currency);
+
+        // then
+        Assert.assertEquals("1.00", result);
     }
 
 }

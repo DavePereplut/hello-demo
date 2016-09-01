@@ -9,9 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ExchangeController {
 
-    @RequestMapping( value ="/hello/{name}", method = RequestMethod.GET)
-    public String hello(@PathVariable String name){
-        return "heLLo "+name;
 
+    private static final String USD = "USD";
+
+    @RequestMapping(value = "/{currency}/exchange-rate", method = RequestMethod.GET)
+    public String exchangeRate(@PathVariable String currency) {
+        if ("USD".equalsIgnoreCase(currency)) {
+            return "1.00";
+        } else {
+            return "not supported";
+        }
     }
 }
