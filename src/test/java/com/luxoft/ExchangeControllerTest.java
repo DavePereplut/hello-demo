@@ -7,7 +7,7 @@ public class ExchangeControllerTest {
 
     @Test
     public void testMessage(){
-        Assert.assertEquals("not equal","Name",exchangeController.hello("Name"));
+        Assert.assertEquals("not equal","heLLo Name",exchangeController.hello("Name"));
     }
 
 }
